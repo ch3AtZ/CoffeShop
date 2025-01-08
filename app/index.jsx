@@ -1,6 +1,9 @@
-import { Text, View , StyleSheet , ImageBackground  , Pressable} from 'react-native'
+import { Text, View , StyleSheet , ImageBackground  , Pressable , Image} from 'react-native'
 import { Link } from 'expo-router'
 import icedcoffeimg from '@/assets/images/icecofee.png'
+import cartimage from '@/assets/images/cart/cart.jpg'
+
+
 
 
 const App = () =>{
@@ -25,6 +28,12 @@ const App = () =>{
       <Link href={"/Menu"} style={{marginHorizontal:'auto'}}asChild>
       <Pressable style={styles.button}>
         <Text style={styles.buttonText}>Menu</Text>
+      </Pressable> 
+      </Link>
+
+      <Link href={"/cart"} style={{marginHorizontal:'auto'}}asChild>
+      <Pressable style={styles.cartButton}>
+        <Image source={cartimage} style={styles.cartImg}/>
       </Pressable> 
       </Link>
       
@@ -69,6 +78,22 @@ const styles = StyleSheet.create({
     borderRadius:20,
     backgroundColor:'red',
     justifyContent:'center'
+  },
+  cartImg:{
+    width:'72%',
+    height:'72%',
+  },
+  cartButton:{
+    height:50,
+    borderRadius:25,
+    justifyContent:'center',
+    backgroundColor:'white',
+    alignItems: 'center',
+    width:50,
+    marginTop:150,
+    marginRight:100
+
+
   }
 
 
