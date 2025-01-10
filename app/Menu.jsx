@@ -17,6 +17,7 @@ export default function MenuScreen(){
                 data={MenuItems}
                 keyExtractor={(item) => item.id.toString()}
                 showsVerticalScrollIndicator = {false}
+
                 renderItem={({item}) =>(
                     <View style={styles.card}>
                         <View style={styles.textcontainer}>
@@ -71,6 +72,8 @@ function createStyles(theme , colorScheme){
             alignItems :'center',
             elevation: 3,
             shadowColor:'#000',
+            borderWidth:3,
+            borderColor:'white'
         },
         textcontainer:{
             paddingRight:8,

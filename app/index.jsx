@@ -2,13 +2,14 @@ import { Text, View , StyleSheet , ImageBackground  , Pressable , Image} from 'r
 import { Link } from 'expo-router'
 import icedcoffeimg from '@/assets/images/icecofee.png'
 import cartimage from '@/assets/images/cart/cart.jpg'
+import newappimg from '@/assets/images/app_background.avif'
 
 const App = () =>{
   return (
 
     <View style={styles.containter}>
       <ImageBackground
-      source={icedcoffeimg}
+      source={newappimg}
       resizeMode='cover' //because we want to cover the whole screen for it 
       style={styles.image}
     >
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent:'center',
   },
   title:{
-    color:'blue',
+    color:'rgba(0,0,0,100)',
     fontSize:42,
     fontWeight:'bold',
     textAlign:'center',
@@ -62,17 +63,21 @@ const styles = StyleSheet.create({
 
   },
   buttonText:{
-    color:'white',
+    color:'black',
     fontSize:15,
     fontWeight:'bold',
     textAlign:'center',
     padding:4,
   },
   button:{
-    height:60,
+    height:40,
     borderRadius:20,
-    backgroundColor:'red',
-    justifyContent:'center'
+    backgroundColor:'rgba(0,0,0,0.5)',
+    justifyContent:'center',
+    borderWidth:1,
+    borderColor:'black',
+    marginTop:50,
+    width:150
   },
   cartImg:{
     width:'72%',
@@ -85,8 +90,12 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
     alignItems: 'center',
     width:50,
-    marginTop:150,
-    marginRight:100
+    
+    position:'absolute',
+    bottom:40,
+    right:20
+    
+
   }
 
 })
