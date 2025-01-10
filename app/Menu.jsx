@@ -2,8 +2,6 @@ import { Appearance, StyleSheet , Platform , SafeAreaView , ScrollView , FlatLis
 import { Colors } from "@/constants/Colors";
 import { MenuItems } from "@/constants/MenuItems";
 import menuimages from '@/constants/MenuImages';
-
-
 export default function MenuScreen(){
     const colorScheme = Appearance.getColorScheme()
 
@@ -18,10 +16,10 @@ export default function MenuScreen(){
             <FlatList
                 data={MenuItems}
                 keyExtractor={(item) => item.id.toString()}
-                showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator = {false}
                 renderItem={({item}) =>(
-                    <View>
-                        <View>
+                    <View style={styles.card}>
+                        <View style={styles.textcontainer}>
                             <Text style={styles.title}>{item.coffee_name}</Text>
                             <Text style={styles.price}>{item.price}</Text>
                         </View>
@@ -41,31 +39,46 @@ function createStyles(theme , colorScheme){
     return StyleSheet.create({
         container:{
             flex:1,
-            backgroundColor:theme.background
+            backgroundColor:theme.background,
+            padding:10
         },
         itemContainer:{
-            padding:16,
+            padding:10,
             borderRadius:8,
             backgroundColor:theme.card
         },
         title:{
+            fontWeight:'bold',
             fontSize:15,
             color:theme.text,
-            fontWeight:'bold',
             marginTop:4
         },
         image:{
-            width:'100%',
-            height:200,
+            width:180,
+            height:180,
             borderRadius:8
         },
         price:{
             fontSize:10,
             color:'white',
             fontWeight:'bold'
+            
+        },
+        card:{
+            flexDirection:'row',
+            borderRadius: 8,
+            padding: 10,
+            alignItems :'center',
+            elevation: 3,
+            shadowColor:'#000',
+        },
+        textcontainer:{
+            paddingRight:8,
+            flex:1,
+
+
         }
         
-
 
     })
 }

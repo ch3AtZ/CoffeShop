@@ -10,7 +10,6 @@ const ShopInfo =  () =>{
       <Text style={styles.textInfo}>Address: 21/9 Ashok Nagar </Text>
       <Text style = {styles.textInfo}>Phone Number: 9667323957</Text>
       <Text style={styles.textInfo}>Email ID: dhruvbharara2@gmail.com</Text>
-
     </View>
   )
 }

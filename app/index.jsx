@@ -3,9 +3,6 @@ import { Link } from 'expo-router'
 import icedcoffeimg from '@/assets/images/icecofee.png'
 import cartimage from '@/assets/images/cart/cart.jpg'
 
-
-
-
 const App = () =>{
   return (
 
@@ -15,8 +12,6 @@ const App = () =>{
       resizeMode='cover' //because we want to cover the whole screen for it 
       style={styles.image}
     >
-      
-      
       <Text style={styles.title}>Coffee Shop</Text>
 
       <Link href="/ContactUs" style={{marginHorizontal:'auto'}} asChild> 
@@ -92,11 +87,7 @@ const styles = StyleSheet.create({
     width:50,
     marginTop:150,
     marginRight:100
-
-
   }
-
-
 
 })
 

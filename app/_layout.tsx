@@ -35,10 +35,9 @@ export default function RootLayout() {
       <Stack screenOptions={{headerStyle:{backgroundColor:theme.headerBackground} , headerShadowVisible:false , headerTintColor:theme.text}}>
         <Stack.Screen name='index' options = {{headerShown:false , title:'Home'}}></Stack.Screen>
         <Stack.Screen name='ContactUs' options = {{headerShown:false , headerTitle:'Contact Us'}}></Stack.Screen>
-       
+        <Stack.Screen name='Menu' options = {{headerShown:false , headerTitle:'Menu'}}></Stack.Screen>
+        <Stack.Screen name='cart' options = {{headerShown:false , headerTitle:'Cart'}}></Stack.Screen>
 
-
-        
       </Stack>
       
     
