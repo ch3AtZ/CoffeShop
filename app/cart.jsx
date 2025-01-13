@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, FlatList, Image, StyleSheet , Platform , ScrollView} from "react-native";
+import { Text, View, FlatList, Image, StyleSheet , Platform , ScrollView , SafeAreaView} from "react-native";
 import { useCart } from "@/constants/CartProvider";
 import { TouchableOpacity } from "react-native";
 import MenuImages from "@/constants/MenuImages";
