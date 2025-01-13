@@ -3,9 +3,15 @@ import { Link } from 'expo-router'
 import icedcoffeimg from '@/assets/images/icecofee.png'
 import cartimage from '@/assets/images/cart/cart.jpg'
 import newappimg from '@/assets/images/app_background.avif'
+import Cart from './cart'
+import MenuScreen from './Menu'
+import { CartProvider } from '@/constants/CartProvider'
+import { NavigationContainer } from '@react-navigation/native'
+import Stack from 'expo-router'
 
 const App = () =>{
   return (
+    
 
     <View style={styles.containter}>
       <ImageBackground
@@ -32,7 +38,8 @@ const App = () =>{
         <Image source={cartimage} style={styles.cartImg}/>
       </Pressable> 
       </Link>
-      
+
+    
       </ImageBackground>
     </View>
   

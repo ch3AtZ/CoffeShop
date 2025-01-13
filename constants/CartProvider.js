@@ -12,7 +12,7 @@ export const CartProvider =({children}) =>{
 
     };
     const removeFromCart =(id) =>{
-        setCart((setCart) =>prevCart.filter((item)=>item.id!== id))
+        setCart((prevCart) =>prevCart.filter((item)=>item.id!== id))
     };
 
     return (

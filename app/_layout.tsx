@@ -5,7 +5,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { Appearance } from 'react-native';
-
+import { CartProvider } from '@/constants/CartProvider';
 import { Colors } from '@/constants/Colors';
 
 
@@ -31,7 +31,7 @@ export default function RootLayout() {
   }
 
   return (
-   
+    <CartProvider>
       <Stack screenOptions={{headerStyle:{backgroundColor:theme.headerBackground} , headerShadowVisible:false , headerTintColor:theme.text}}>
         <Stack.Screen name='index' options = {{headerShown:false , title:'Home'}}></Stack.Screen>
         <Stack.Screen name='ContactUs' options = {{headerShown:false , headerTitle:'Contact Us'}}></Stack.Screen>
@@ -39,6 +39,7 @@ export default function RootLayout() {
         <Stack.Screen name='cart' options = {{headerShown:false , headerTitle:'Cart'}}></Stack.Screen>
 
       </Stack>
+      </CartProvider>
       
     
   );
