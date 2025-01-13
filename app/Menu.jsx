@@ -82,7 +82,7 @@ import {
           },
           price: {
               fontSize: 14,
-              color: theme.textSecondary, // Adjusted color for better readability
+              color: 'white', // Adjusted color for better readability
               fontWeight: "bold",
               marginBottom: 10,
           },
@@ -95,15 +95,20 @@ import {
           addButton: {
               marginTop: 10,
               backgroundColor: "red",
-              borderRadius: 10,
-              alignItems: "center",
-              width: "auto", // Make the button width dynamic to fit text
-              paddingVertical: 5,
-              paddingHorizontal: 12,
+              borderRadius: 20,
+              justifyContent:'center',
+              width: 100,
+              height:40,
+              marginLeft:65
+
+          
           },
           addButtonText: {
               color: "white",
               fontWeight: "bold",
+              marginLeft:35,
+
+              
           },
       });
   }
