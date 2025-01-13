@@ -1,5 +1,8 @@
 import React, { createContext, useState, useContext} from "react";
 
+
+
+
 const CartContext =createContext();
 
 export const CartProvider =({children}) =>{
@@ -9,6 +12,7 @@ export const CartProvider =({children}) =>{
         if (!cart.some((cartItem)=>cartItem.id === item.id)){
             setCart((prevCart)=>[...prevCart,item]);
         }
+       
 
     };
     const removeFromCart =(id) =>{
