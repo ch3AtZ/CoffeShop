@@ -1,10 +1,15 @@
 import React from "react";
-import { Text, View, FlatList, Image, StyleSheet } from "react-native";
+import { Text, View, FlatList, Image, StyleSheet , Platform , ScrollView} from "react-native";
 import { useCart } from "@/constants/CartProvider";
 import { TouchableOpacity } from "react-native";
-export default function Cart() {
-    const { cart, removeFromCart } = useCart();
+import MenuImages from "@/constants/MenuImages";
 
+
+
+export default function Cart() {
+
+    const { cart, removeFromCart } = useCart();
+    const Container = Platform.OS === "web" ? ScrollView : SafeAreaView;
     if (cart.length === 0) {
         return (
             <View style={styles.container}>
@@ -12,15 +17,18 @@ export default function Cart() {
             </View>
         );
     }
-
-    return (
-        <View style={styles.container}>
-            <FlatList
+    else{
+        return(
+            <View style={styles.container}>
+                <Text style={styles.emptyText}>The following items are ready to order !</Text>
+                <Container style={styles.secContainer}>
+                <View style={styles.container}>
+                <FlatList
                 data={cart}
                 keyExtractor={(item) => item.id.toString()}
                 renderItem={({ item }) => (
                     <View style={styles.card}>
-                        <Image source={item.image} style={styles.image} />
+                        <Image source={MenuImages[item.id-1]} style={styles.image} />
                         <View style={styles.textContainer}>
                             <Text style={styles.title}>{item.coffee_name}</Text>
                             <Text style={styles.price}>{item.price}</Text>
@@ -32,7 +40,13 @@ export default function Cart() {
                 )}
             />
         </View>
-    );
+
+                </Container>
+            </View>
+        );
+    }
+
+
 }
 
 const styles = StyleSheet.create({
@@ -74,4 +88,9 @@ const styles = StyleSheet.create({
         color: "red",
         marginTop: 8,
     },
+    secContainer:{
+        flex:1,
+        padding:10,
+
+    }
 });
