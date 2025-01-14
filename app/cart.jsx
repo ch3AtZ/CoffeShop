@@ -8,7 +8,7 @@ import MenuImages from "@/constants/MenuImages";
 
 export default function Cart() {
 
-    const { cart, removeFromCart } = useCart();
+    const { cart, removeFromCart} = useCart();
     const Container = Platform.OS === "web" ? ScrollView : SafeAreaView;
     if (cart.length === 0) {
         return (
@@ -36,10 +36,34 @@ export default function Cart() {
                                 <Text style={styles.removeButton}>Remove</Text>
                             </TouchableOpacity>
                         </View>
+
+                        
                     </View>
                 )}
-            />
-        </View>
+                />
+                <View data={cart} style={styles.ItemCard}>
+                    {cart.map((item,index) =>(
+                        <View style={styles.itemRow}>
+                            <Text style={styles.itemName}>{item.coffee_name}</Text>
+                            <Text style={styles.itemPrice}>{item.price}</Text>
+                        
+
+                        </View>
+
+                    ) )}
+                    
+                </View>
+                <View style={styles.TotalCard}>
+                    <Text style={styles.totaltext1}>Grand Total:</Text>
+                    <Text style={styles.totalPrice}>
+                        {cart.reduce((sum,item)=>sum+item.price , 0)}
+                    </Text>
+
+                </View>
+               
+              
+            
+                 </View>
 
                 </Container>
             </View>
@@ -92,5 +116,54 @@ const styles = StyleSheet.create({
         flex:1,
         padding:10,
 
-    }
+    },
+    itemName:{
+        fontSize:16,
+        color:'black'
+    },
+    itemRow:{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        paddingVertical: 5, // Gap between rows
+        borderBottomWidth: 0.5,
+        borderBottomColor: "#ccc",
+
+    },
+    ItemCard:{
+        backgroundColor: "#fff", // White card background
+        borderRadius: 10,
+        padding:10,
+    },
+    itemPrice:{
+        fontSize:12,
+        color:'Black',
+        
+    },
+    itemTotal:{
+        fontSize:20,
+        fontWeight:'bold',
+
+    },
+    TotalCard:{
+        backgroundColor: "#f9f9f9",
+        borderRadius:10,
+        padding:10,
+        justifyContent:'space-between',
+        marginTop:15,
+        paddingTop:10,
+        flexDirection:'row',
+        alignItems:'center'
+        
+    },
+    totaltext1:{
+        fontSize:20,
+        fontWeight:'bold',
+        color:'red'
+    },
+    totalPrice:{
+        fontSize:15,
+        fontWeight:'bold',
+    },
+    
+
 });

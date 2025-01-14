@@ -18,12 +18,16 @@ import { TouchableOpacity } from "react-native";
 import Cart from "./cart";
 import cartimage from '@/assets/images/cart/cart.jpg'
 import { Link } from "expo-router";
+
   
 export default function MenuScreen() {
     const { addToCart } = useCart();
+    const {cart} = useCart();
     const colorScheme = Appearance.getColorScheme();
     const theme = colorScheme === "dark" ? Colors.dark : Colors.light;
     const styles = createStyles(theme);
+    
+    
 
     const Container = Platform.OS === "web" ? ScrollView : SafeAreaView;
 
@@ -59,6 +63,10 @@ export default function MenuScreen() {
             <Link href="/cart" asChild>
                 <Pressable style={styles.cartButton}>
                     <Image source={cartimage} style={styles.cartImage} />
+                    <View style={styles.cartBadge}>
+                        <Text style={styles.lencart}>{cart.length}</Text>
+                    </View>
+                    
                 </Pressable>
             </Link>
         </View>
@@ -149,6 +157,23 @@ function createStyles(theme) {
             width: 30,
             height: 30,
             resizeMode: 'contain'
-        }
+        },
+        cartBadge: {
+            position: 'absolute',
+            top: -5, // Position slightly above the cart button
+            right: -5, // Position slightly to the right
+            backgroundColor: 'red', // Badge background color
+            borderRadius: 10, // Make it round
+            height: 25, // Set height
+            width: 25, // Set width
+            justifyContent: 'center', // Center the text
+            alignItems: 'center', // Center the text
+            zIndex: 1, // Ensure it is above other elements
+        },
+        lencart: {
+            fontWeight: 'bold',
+            fontSize: 10, // Adjust size to fit the badge
+            color: 'white', // White text color for contrast
+        },
     });
 }
