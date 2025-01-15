@@ -1,10 +1,9 @@
 import { Colors } from "@/constants/Colors"
 import { Text, View , StyleSheet, Appearance, ImageBackground} from "react-native"
 import backgroundimg from '@/assets/images/app_background.avif'
-import { withDecay } from "react-native-reanimated"
-import coffecupimg from '@/assets/images/coffee-cup.png'
+
 const colorScheme = Appearance.getColorScheme
-const theme = colorScheme === 'dark' ? Colors.dark : Colors.light
+
 
 const ShopInfo =  () =>{
   return(

@@ -15,7 +15,6 @@ import { MenuItems } from "@/constants/MenuItems";
 import menuimages from "@/constants/MenuImages";
 import { useCart } from "@/constants/CartProvider";
 import { TouchableOpacity } from "react-native";
-import Cart from "./cart";
 import cartimage from '@/assets/images/cart/cart.jpg'
 import { Link } from "expo-router";
 
