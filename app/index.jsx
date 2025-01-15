@@ -7,6 +7,7 @@ import Cart from './cart'
 import MenuScreen from './Menu'
 import { CartProvider } from '@/constants/CartProvider'
 import { NavigationContainer } from '@react-navigation/native'
+import contactimg from '@/assets/images/contact.png'
 import Stack from 'expo-router'
 
 const App = () =>{
@@ -22,8 +23,8 @@ const App = () =>{
       <Text style={styles.title}>Coffee Shop</Text>
 
       <Link href="/ContactUs" style={{marginHorizontal:'auto'}} asChild> 
-      <Pressable style={styles.button} >
-       <Text style={styles.buttonText}>Contact Us</Text>
+      <Pressable style={styles.menuButton} >
+       <Image source={contactimg} style={styles.cartImg}/>
       </Pressable>     
       </Link>
 
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   },
   cartImg:{
     width:'72%',
-    height:'72%',
+    height:'72%'
   },
   cartButton:{
     height:50,
@@ -103,7 +104,21 @@ const styles = StyleSheet.create({
     right:20
     
 
+  },
+  menuButton:{
+    height:50,
+    borderRadius:25,
+    justifyContent:'center',
+    backgroundColor:'white',
+    alignItems: 'center',
+    width:50,
+    
+    position:'absolute',
+    bottom:40,
+    left:20
+
   }
+
 
 })
 
