@@ -5,6 +5,7 @@ import backgroundimg from '@/assets/images/app_background.avif'
 const colorScheme = Appearance.getColorScheme
 
 
+
 const ShopInfo =  () =>{
   return(
     <View style={styles.container}>

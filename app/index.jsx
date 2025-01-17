@@ -39,6 +39,7 @@ const App = () =>{
         <Image source={cartimage} style={styles.cartImg}/>
       </Pressable> 
       </Link>
+      
 
     
       </ImageBackground>
